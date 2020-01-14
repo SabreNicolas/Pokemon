@@ -1,5 +1,4 @@
 <mat-nav-list class="liste" infiniteScroll [scrollWindow]="false" (scrolled)="onScroll()" >
-
   <mat-form-field class="inputButton">
     <input [ngModel]="search" (ngModelChange)="searchPokemon($event)" matInput placeholder="Recherche">
   </mat-form-field>
@@ -11,4 +10,6 @@
       </div>
     </mat-list-item>
 </mat-nav-list>
+
+
 

@@ -14,7 +14,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[];
   nbPokemon = 0;
   limit = 20;
-  search: string;
+  search: string; // test
 
   constructor(private pokemonService: PokemonService) {
   }
