@@ -1,11 +1,4 @@
-<h1>Descriptif du Pokémon</h1>
-
-
 <mat-card *ngIf="pokemon" class="infosPokemon">
-
-  <audio #playSong autoplay>
-    <source src="assets/audio/{{pokemon.id}}.mp3" type="audio/mp3" />
-  </audio>
 
   <mat-grid-list cols = "2" rowHeight = "17%">
     <mat-grid-tile
@@ -59,6 +52,10 @@
         <button mat-raised-button class="retour" (click)="goBack()">Retour</button>
     </mat-grid-tile>
   </mat-grid-list>
+
+  <audio #playSong autoplay>
+    <source src="assets/audio/{{pokemon.id}}.mp3" type="audio/mp3" />
+  </audio>
 
 </mat-card>
 

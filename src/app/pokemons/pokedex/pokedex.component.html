@@ -1,0 +1,4 @@
+<mat-sidenav-container class="pokedex">
+  <mat-sidenav class="list" mode="side" opened><app-pokemon-list #listPokemons (click)="detail.ngOnInit()"></app-pokemon-list></mat-sidenav>
+  <mat-sidenav-content class="det"><app-pokemon-detail #detail></app-pokemon-detail></mat-sidenav-content>
+</mat-sidenav-container>

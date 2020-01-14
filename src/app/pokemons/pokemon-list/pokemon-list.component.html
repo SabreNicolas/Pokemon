@@ -1,10 +1,14 @@
-<h1>POKEDEX</h1>
+<mat-nav-list class="liste" infiniteScroll [scrollWindow]="false" (scrolled)="onScroll()" >
 
-<mat-nav-list infiniteScroll (scrolled)="onScroll()">
-    <mat-list-item *ngFor="let pokemon of pokemons" routerLink="/detail/{{pokemon.id}}">
+  <mat-form-field class="inputButton">
+    <input [ngModel]="search" (ngModelChange)="searchPokemon($event)" matInput placeholder="Recherche">
+  </mat-form-field>
+
+    <mat-list-item *ngFor="let pokemon of pokemons" (click)="setPokemonSelected(pokemon)">
       <img matListAvatar src="assets/img/sprites/{{pokemon.id}}.png">
       <div class = "module pokemon">
         <h4>{{pokemon.id}}.{{pokemon.name}}</h4>
       </div>
     </mat-list-item>
 </mat-nav-list>
+
