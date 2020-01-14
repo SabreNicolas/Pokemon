@@ -1,0 +1,21 @@
+.infosPokemon{
+  width: 40%;
+  height: 60%;
+  margin-left: 5%;
+}
+
+.avatar{
+  width: 80%;
+}
+
+.num{
+  font-size: small;
+}
+
+.btnPlay{
+  margin-left: 2%;
+}
+
+.mat-icon-button ::ng-deep .mat-button-focus-overlay {
+  display: none;
+}

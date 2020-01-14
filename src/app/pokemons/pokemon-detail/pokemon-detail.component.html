@@ -1,0 +1,65 @@
+<h1>Descriptif du Pokémon</h1>
+
+
+<mat-card *ngIf="pokemon" class="infosPokemon">
+
+  <audio #playSong autoplay>
+    <source src="assets/audio/{{pokemon.id}}.mp3" type="audio/mp3" />
+  </audio>
+
+  <mat-grid-list cols = "2" rowHeight = "17%">
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "3">
+        <img matListAvatar class="avatar" src="assets/img/official-artwork/{{pokemon.id }}.png">
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+        <div class="nom">{{pokemon.name}}</div>
+        <mat-icon class="btnPlay" (click)="play(playSong)">play_circle_outline</mat-icon>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+      <mat-chip-list class="types">
+        <mat-chip *ngFor="let types of pokemon.types">{{types}}</mat-chip>
+      </mat-chip-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+      <div class="taille"><span>Taille: </span>{{pokemon.height | number:'1.1-1'}} m</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+        <div class="num"><span>No: </span>{{pokemon.id | number:'3.0-0'}}</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "1"
+      [rowspan] = "1">
+      <div class="poids"><span>Poids: </span>{{pokemon.weight | number:'1.1-1'}} Kg</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "2"
+      [rowspan] = "1">
+        <div class="description">{{pokemon.description}}</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile
+      [colspan] = "2"
+      [rowspan] = "1">
+        <button mat-raised-button class="retour" (click)="goBack()">Retour</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</mat-card>
+
+
