@@ -4,6 +4,7 @@ import {Pokemon} from '../models/pokemon.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 import {PagedData} from '../models/pages-data.model';
+import {Token} from "../models/token.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class PokemonService {
   pokemonSelected: Pokemon;
   pokemonsResearch: Pokemon[];
   pokemonsUrl = 'http://app-ec21e68e-3e55-42d7-b1ae-3eef7507a353.cleverapps.io/pokemons';
+  pokeLogin = 'http://app-ec21e68e-3e55-42d7-b1ae-3eef7507a353.cleverapps.io/auth/login';
   httpClient: HttpClient;
 
   constructor(private http: HttpClient) {
@@ -80,6 +82,13 @@ export class PokemonService {
 
   clearDataResearch() {
     this.pokemonsResearch = undefined;
+  }
+
+  login(data) : Observable<Token> {
+    return this.http.post<Token>(this.pokeLogin, data)
+        .pipe(
+            catchError(this.handleError<Token>('login'))
+        );
   }
 
 }

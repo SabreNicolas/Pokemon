@@ -1,1 +1,13 @@
-<p>connexion works!</p>
+<form [formGroup]="checkoutForm" class="formLogin">
+    <mat-form-field>
+        <input id="email" formControlName="email" matInput placeholder="Enter your email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input id="password" formControlName="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+    <button type="button" mat-button (click)="login(checkoutForm.value)">Connexion</button>
+</form>

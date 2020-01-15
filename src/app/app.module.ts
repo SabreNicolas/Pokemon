@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PokemonsModule} from './pokemons/pokemons.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import {UtilisateursModule} from "./utilisateurs/utilisateurs.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
         BrowserAnimationsModule,
         PokemonsModule,
         HttpClientModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        UtilisateursModule
     ],
   providers: [],
   bootstrap: [AppComponent]
